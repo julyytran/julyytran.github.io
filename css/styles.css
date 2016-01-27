@@ -1,4 +1,4 @@
-div {
+body {
 background: rgba(162,237,49,1);
 background: -moz-linear-gradient(left, rgba(162,237,49,1) 0%, rgba(121,198,236,1) 100%);
 background: -webkit-gradient(left top, right top, color-stop(0%, rgba(162,237,49,1)), color-stop(100%, rgba(121,198,236,1)));
