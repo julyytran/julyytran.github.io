@@ -7,6 +7,13 @@ background: -o-linear-gradient(left, rgba(162,237,49,1) 0%, rgba(121,198,236,1) 
 background: -ms-linear-gradient(left, rgba(162,237,49,1) 0%, rgba(121,198,236,1) 100%);
 background: linear-gradient(to right, rgba(162,237,49,1) 0%, rgba(121,198,236,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2ed31', endColorstr='#79c6ec', GradientType=1 );
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 18px;
+
+}
+
+html {
+  color: black;
 }
 /*
   ========================================
@@ -36,33 +43,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2ed31', end
 h1, h3, h4, h5, p {
   margin-bottom: 22px;
 }
-h2,
-p {
-  color: #555;
-  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+h3 {
+  font-size: 28px;
 }
-a {
-  color: #0087cc;
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
-a:hover {
-  color: #ff7b29;
-}
-h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-.byline {
-  color: #9799a7;
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-style: italic;
-  margin-bottom: 18px;
-}
-img {
-  background: #eaeaed;
-   border: 1px solid #9799a7;
-   float: right;
-   margin: 8px 0 0 20px;
-   padding: 4px;
-   height: 200px;
- }
