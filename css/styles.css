@@ -31,7 +31,12 @@ ul {
     margin: 0;
     padding: 0;
 }
-
+/* align date of posts right */
 h4 {
   text-align: right;
+}
+
+/*align site title and nav center*/
+h3, nav {
+  text-align: center;
 }
