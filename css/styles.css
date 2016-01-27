@@ -32,7 +32,8 @@ ul {
     padding: 0;
 }
 
-#title {
+/*align site title and nav center*/
+h3 {
   text-align: center;
   font-size: 36px;
 }
