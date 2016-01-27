@@ -18,8 +18,9 @@ li {
     display: inline;
     border-right: 1px solid #bbb;
 }
-a {
-    color: hotpink;
+nav {
+  text-decoration: none;
+  font-size: 18px;
 }
 /*
   ========================================
