@@ -31,18 +31,18 @@ ul {
     margin: 0;
     padding: 0;
 }
-/* align date of posts right */
-h4 {
-  text-align: right;
-}
 
-/*align site title and nav center*/
-h3 {
+#title {
   text-align: center;
   font-size: 36px;
 }
 
-nav {
+#nav {
   text-align: center;
   font-size: 18px;
+}
+
+#posts {
+  width: 70%;
+  margin: auto;
 }
