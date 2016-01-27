@@ -16,6 +16,10 @@ html {
 }
 li {
     display: inline;
+    border-right: 1px solid #bbb;
+}
+a {
+    color: hotpink;
 }
 /*
   ========================================
