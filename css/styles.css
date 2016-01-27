@@ -32,53 +32,6 @@ ul {
     padding: 0;
 }
 
-
-/*
-  ========================================
-  images
-  ========================================
-*/
-img {
-  display: block;
-  height: 200px
-  margin: 8px 0 0 20px;
-  padding: 4px;
-}
-/*
-  ========================================
-  Grid
-  ========================================
-*/
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.container {
-  margin: 0 auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  width: 960px;
-}
-/*
-  ========================================
-  Typography
-  ========================================
-*/
-
-h1, h3, h4, h5, p {
-  margin-bottom: 22px;
-}
-h3 {
-  font-size: 36px;
-}
-.rainbow {
-  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+h4 {
+  text-align: right;
 }
