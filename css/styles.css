@@ -1,23 +1,14 @@
-/*
-  ========================================
-  background color
-  ========================================
-*/
+/*  background color */
 body {
   background: #ffffcc;
 }
-/*
-  ========================================
-  text color
-  ========================================
-*/
+
+/*  text color */
 html {
   color: black;
 }
-li {
-    display: inline;
-    border-right: 1px solid #bbb;
-}
+
+/* Remove underlining from links */
 a:link {
     text-decoration: none;
 }
@@ -33,6 +24,23 @@ a:hover {
 a:active {
     text-decoration: underline;
 }
+
+/* center links and add border */
+ul {
+    border: 1px solid #555;
+}
+
+li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+    display: inline;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+
 /*
   ========================================
   images
