@@ -38,7 +38,9 @@ h3 {
 }
 
 #posts {
+  width: 50%;
   margin: auto;
+  text-align: center;
 }
 
 /* size and align images */
@@ -50,6 +52,7 @@ img {
 }
 
 #tanooki_suit {
+  height: 200px;
   display: inline-block;
   line-height: 200%;
   margin-left: auto;
