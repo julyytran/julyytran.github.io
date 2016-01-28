@@ -31,7 +31,7 @@ h3 {
   font-size: 36px;
 }
 
-h1 {
+h1, p {
   text-align: center;
 }
 #nav {
@@ -46,7 +46,7 @@ h1 {
   text-align: center;
 }
 
-p {
+#post_text {
   margin-left: auto;
   margin-right: auto;
   width: 48em
