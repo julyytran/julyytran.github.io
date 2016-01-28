@@ -46,11 +46,19 @@ h3 {
 #post_text {
   margin-left: auto;
   margin-right: auto;
-  width: 24em
+  width: 48em
 }
 
 /* size and align images */
-img {
+#racoon_dog {
+  height: 200px;
+  line-height: 200%;
+  display: block;
+   margin-left: auto;
+   margin-right: auto
+}
+
+#tanooki_suit {
   height: 200px;
   line-height: 200%;
   display: inline-block;
