@@ -44,14 +44,16 @@ h3 {
 }
 
 #post_text {
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 24em
 }
 
 /* size and align images */
 img {
   height: 200px;
   line-height: 200%;
-  display: block;
+  display: inline-block;
    margin-left: auto;
    margin-right: auto
 }
