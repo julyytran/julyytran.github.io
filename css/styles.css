@@ -25,13 +25,6 @@ a:active {
     text-decoration: underline;
 }
 
-/* remove bullets from header */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
 /* align site title and nav center */
 h3 {
   text-align: center;
@@ -45,15 +38,19 @@ h3 {
 }
 
 #posts {
-  width: 70%;
+  width: 50%;
   margin: auto;
 }
 
-/* size images */
+/* size and align images */
 img {
   height: 200px;
+  display: block;
+   margin-left: auto;
+   margin-right: auto
 }
 
 #tanooki_suit {
   display: inline-block;
+  line-height: 200%;
 }
