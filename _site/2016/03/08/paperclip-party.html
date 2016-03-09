@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>July Tran</title>
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <h3>July Tran</h3>
+  <div id ="nav">
+    <nav>
+      <a href="/">Blog</a>
+    </nav>
+    </header>
+    </div>
+
+
+<h1>Paperclip Party! Paperclip, Figaro, and AWS</h1>
+<h4>March 08, 2016</h4>
+<div id="post_text">
+
+<p>Paperclip is a gem that allows you to upload your own files as an attribute to a model. AWS (Amazon Web Services) provides online storage for these files. (If you just use paperclip locally, Heroku will not keep the images online, since you haven't paid for that). Figaro is a gem that helps you set up your environment variables in a secure way. This post is going to cover how to use these three gems in a Ruby/Rails project, using the Little Shop project I worked on as an example. </p>
+
+<h2>Paperclip</h2>
+<p>1. Set up</p>
+  <ul>
+    <li>brew install imagemagick</li>
+    <li>brew install gs</li>
+    <li>add to your gemfile: gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"</li>
+    <li>bundle</li>
+  </ul>
+
+  <p>2. Migrate</p>
+  <ul>
+    <li> rails generate paperclip gif image </li>
+    <li> Change in migration file should be: add_attachment :gifs, :image </li>
+    <li> Migrate! Your schema should now have image, image_file_name, image_content_type, image_file_size, and image_updated_at for your model </li>
+  </ul>
+
+<p>  3. Model </p>
+    <li> this puts the file on the model as an attribute: </li>
+    <li> has_attached_file :image, :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename",
+    styles: {
+      favicon: '16x16>',
+      square: '200x200#',
+      medium: '300x300>'
+    } </li>
+    <li> this is the validation; it must be validated:</li>
+  <li>  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/ </li>
+  </ul>
+
+<p>  4. Edit and New Views </p>
+  <ul>
+    <li> form.text_field --> form.file_field :image </li>
+  </ul>
+
+<p>  5. Controller Create and Update </p>
+  <ul>
+    <li> permit :image in the strong params </li>
+  </ul>
+
+<p>  6. Show View <p>
+  <ul>
+    <li> you can call size, or let it default to original </li>
+    <li> <%= image_tag @gif.image.url %> </li>
+    <li> <%= image_tag @gif.image.url(:medium) %> </li>
+    <li><%= image_tag @gif.image.url(:thumb) %> </li>
+  </ul>
+
+<p>Congratulations, you now have Paperclip working! </p>
+
+<h2>Figaro</h2>
+<p> To store our images online, we will use AWS. AWS will give us keys to where our image is stored. These keys and other info should be set in our environment to remain secure. To do this, we will use Figaro. <p>
+
+<ul>
+  <li> Add to your gemfile: gem "figaro" </li>
+  <li> bundle </li>
+  <li> figaro install </li>
+    <li> This creates a commented config/application.yml file and adds it to your .gitignore. Verify that the application.yml is in your .gitignore file </li>
+  <li> Add your environment variables to this file! (We will add to this when we get keys from AWS) </li>
+  <li> In production, run this to set all environment variables in the application.yml file at once!
+    - figaro heroku:set -e production </li>
+</ul>
+<p>  Now that we have figaro set up, let's get to the spicy stuff...
+</p>
+
+<h2>AWS</h2>
+<ul>
+   <li> Add to your gemfile: gem 'aws-sdk', '>= 2.0.0'</li>
+  <li> bundle</li>
+<li> Go to http://aws.amazon.com/s3/ and create an account</li>
+  <li> Navigate to Amazon S3 and create a bucket - CHOOSE 'US STANDARD' AS YOUR REGION
+    - bucket names are unqiue across all existing buckets for all users</li>
+  <li> Navigate to 'security credentials' under 'my account' in the top right</li>
+  <li>Expand 'access keys'</li>
+  <li> Click 'create a new access key' - SAVE THESE KEYS</li>
+  <li> Go to your application.yml file and enter the following:
+    <ul>
+    <li>  S3_BUCKET_NAME: bucket_name</li>
+    <li>   AWS_ACCESS_KEY_ID: access_key</li>
+    <li>   AWS_SECRET_ACCESS_KEY: secret_access_key</li>
+    <li>   AWS_REGION: us-east-1</li>
+  <li>   Where the values are your bucket name and keys, but the region is, in fact, us-east-1.</li>
+    </ul>
+
+  <li> Acess these keys in your development.rb and production.rb like so:</li>
+  <ul>
+  <li>   config.paperclip_defaults = {</li>
+  <li>     :storage => :s3,</li>
+    <li>   :s3_region => ENV['AWS_REGION'],</li>
+    <li>   :s3_credentials => {</li>
+    <li>     :bucket => ENV['S3_BUCKET_NAME'],</li>
+    <li>     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],</li>
+    <li>     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    }</li>
+    </ul>
+  </ul>
+  <p> This should set your environment variables for development and production! Paperclip away! </p>
+</div>
+
+
+<footer class="container">
+</footer>
+    </div>
+  </body>
+</html>
+

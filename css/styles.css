@@ -1,6 +1,6 @@
 /*  background color */
 body {
-  background: #ffffcc;
+  background: white;
 }
 
 /*  text color */
@@ -31,7 +31,7 @@ h3 {
   font-size: 36px;
 }
 
-h1, p {
+h1, h4 {
   text-align: center;
 }
 #nav {
